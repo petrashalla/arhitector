@@ -261,7 +261,7 @@ template {
 
 :root {
   --container-width: 1700px;
-  --container-padding: 20px;
+  --container-padding: 18px;
   --font-family: "Onest", sans-serif;
   --second-family: "Stolzl", sans-serif;
   --third-family: "Oswald", sans-serif;
@@ -1119,7 +1119,7 @@ form.form-search img {
 
 .breadcrumbs li, .breadcrumbs li a {
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   color: rgba(17, 19, 22, 0.4);
 }
 
@@ -1671,7 +1671,7 @@ form.form-search img {
     background: var(--black);
     z-index: 20;
     pointer-events: none;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     height: calc(100vh - 112px);
     overflow-y: auto;
   }
@@ -1743,6 +1743,9 @@ form.form-search img {
   }
 }
 @media (max-width: 768px) {
+  .header__row {
+    gap: 10px;
+  }
   .header__menu {
     height: calc(100vh - 90px);
   }
@@ -1756,11 +1759,12 @@ form.form-search img {
     font-size: 12px;
   }
   .header__top-right {
-    gap: 17px;
+    gap: 15px;
   }
   .header__phone a {
     font-size: 15px;
     margin-bottom: 4px;
+    gap: 6px;
   }
   .header__phone a::before {
     width: 6px;
@@ -2297,8 +2301,10 @@ form.form-search img {
     margin-bottom: 0;
     gap: 8px;
   }
-  .services__card-btns > * span {
+  .services__card-btns > * {
     flex: 1 0 40%;
+  }
+  .services__card-btns > * span {
     padding: 25px 16px;
   }
 }
@@ -2725,11 +2731,17 @@ form.form-search img {
   .examples__card-items {
     margin-bottom: 20px;
   }
+  .examples__card-item:first-child {
+    flex: 1 0 100%;
+  }
   .examples__card-item span {
     font-size: 12px;
   }
   .examples__card-item p {
     font-size: 18px;
+  }
+  .examples__card-line:nth-child(2) {
+    display: none;
   }
   .examples__card-pictures {
     margin-top: 0;
@@ -3116,19 +3128,18 @@ form.form-search img {
 .calculator__form-item input[type=radio]:checked + label span {
   color: rgba(255, 255, 255, 0.6);
 }
-.calculator__form-item input[type=radio]:checked + label::before {
+.calculator__form-item input[type=radio]:checked + label .calculator__form-radio {
   border: 1px solid rgb(255, 255, 255);
 }
-.calculator__form-item input[type=radio]:checked + label::after {
+.calculator__form-item input[type=radio]:checked + label .calculator__form-radio::after {
   opacity: 1;
 }
 .calculator__form-item label {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 16px 26px 16px 21px;
-  padding-left: 65px;
   height: 100%;
   min-height: 101px;
   font-weight: 500;
@@ -3141,29 +3152,25 @@ form.form-search img {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.4);
 }
-.calculator__form-item label::before {
-  content: "";
+.calculator__form-radio {
   display: block;
   border: 1px solid rgba(255, 255, 255, 0.4);
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  position: absolute;
-  left: 21px;
-  top: 50%;
-  transform: translate(0%, -50%);
+  position: relative;
   transition: all 0.3s ease;
 }
-.calculator__form-item label::after {
+.calculator__form-radio::after {
   content: "";
   display: block;
   width: 12px;
   height: 12px;
   background: #fff;
   position: absolute;
-  left: 25px;
+  left: 50%;
   top: 50%;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -3245,7 +3252,7 @@ form.form-search img {
     padding-left: 15px;
   }
   .calculator__form {
-    padding: 20px 18px;
+    padding: 20px 16px;
   }
   .calculator__form-title {
     font-size: 14px;
@@ -3255,24 +3262,27 @@ form.form-search img {
     gap: 5px;
     margin-bottom: 22px;
   }
+  .calculator__form-item {
+    max-width: calc(50% - 3px);
+  }
   .calculator__form-item label {
     padding: 16px 15px;
-    padding-left: 40px;
     min-height: 62px;
     font-size: 12px;
+    gap: 14px;
   }
   .calculator__form-item label span {
+    display: inline-block;
     font-size: 9px;
+    line-height: 130%;
   }
-  .calculator__form-item label::before {
+  .calculator__form-radio {
     width: 14px;
     height: 14px;
-    left: 15px;
   }
-  .calculator__form-item label::after {
-    width: 8.5px;
+  .calculator__form-radio::after {
+    width: 8px;
     height: 8px;
-    left: 18.3px;
   }
   .calculator__form-inner {
     flex-direction: column;
