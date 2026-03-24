@@ -2628,10 +2628,21 @@ form.form-search img {
   .examples__card {
     flex-direction: column;
     gap: 20px;
+    padding: 30px;
   }
   .examples__card-main {
+    display: contents;
     padding: 30px;
     gap: 40px;
+  }
+  .examples__card-top {
+    margin-bottom: 20px;
+  }
+  .examples__card-content {
+    display: contents;
+  }
+  .examples__card-btn {
+    order: 5;
   }
   .examples__card-name {
     font-size: 30px;
@@ -2661,9 +2672,15 @@ form.form-search img {
     flex-direction: column;
     gap: 11px;
   }
+  .examples__card {
+    padding: 15px;
+  }
   .examples__card-main {
     padding: 15px;
     gap: 25px;
+  }
+  .examples__card-top {
+    margin-bottom: 5px;
   }
   .examples__card-name {
     font-size: 18px;
@@ -2681,10 +2698,10 @@ form.form-search img {
   }
   .examples__card-text {
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .examples__card-items {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .examples__card-item:first-child {
     flex: 1 0 100%;
@@ -4182,30 +4199,27 @@ form.form-search img {
   }
   .project__items {
     flex-wrap: wrap;
-    gap: 25px 42px;
+    gap: 25px 22px;
   }
   .project__item {
-    min-width: 35%;
-    max-width: 270px;
-    max-width: 45%;
-    flex-grow: 1;
-  }
-  .project__item:first-child {
-    max-width: 52%;
+    width: 100%;
   }
   .project__item:nth-child(even) {
+    max-width: calc(50% - 22px);
     padding-right: 0;
     border-right: none;
   }
   .project__item:nth-child(odd) {
-    padding-right: 42px;
+    max-width: 50%;
+    padding-right: 22px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
   .project__item span {
     font-size: 12px;
+    margin-bottom: 8px;
   }
   .project__item p {
-    font-size: 18px;
+    font-size: 17px;
   }
   .project__right {
     flex-basis: auto;
